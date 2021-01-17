@@ -1,28 +1,19 @@
+const cors = require('cors');
 const express = require('express');
-const crud = express();
-const db = require('./db');
+const app = express();
+const db = require('./connection');
+const router = require('./router');
+const bodyParser = require('body-parser')
+
+app.use(cors());
+app.use(express.urlencoded({ extended: false}));
+app.use(bodyParser.json());
+app.use(express.static("public"));
+app.set("views", "views");
+app.set("view engine", "hbs");
+
+app.use('/', router);
 
 const port = process.env.PORT || 3000;
-crud.listen(port, () => console.log(`Listening on port ${port}...`));
-
-crud.get('/get/pokemon/all', (request, response) => {
-(async () => {
-  
-    console.log('SELECT * FROM pokemon');
-    const pokemon = await db.selectPokemons();
-    console.log(pokemon);
-
-    //response.send(`Pokemon names: ${pokemon}`);
-
-})();
-});
-crud.get('/get/pokemon/search', (req, res) => {
-
-    (async () => {
-        var name;
-        var colum;
-        const pokemon = await db.selectPokemonByColumn(colum,name);
-        console.log(pokemon);
-    })();
-});
+app.listen(port, () => console.log(`Listening on port ${port}...`));
 

@@ -1,0 +1,32 @@
+<div id="side-nav-bar" class="side-nav-bar shadow-lg p-1 bg-danger" (mouseover)="expandMenu()"
+  (mouseleave)="closeMenu()">
+  <div class="d-flex justify-content-center mb-5">
+    <a class="pokeball-icon" href="#">
+      <img class="img-fluid mt-3 logo-back p-1" width="60px" height="60px" src="../../assets/pokeball.png">
+      <img class="img-fluid mt-3 logo-front p-1" width="60px" height="60px" src="../../assets/pokeball-hover.png">
+    </a>
+  </div>
+  <div class="text-center">
+    <div class="botao">
+      <a class="btn btn-danger text-light text-decoration-none lead text-uppercase font-weight-bold" href="#">
+        <i class="fa fa-list-ul" aria-hidden="true"></i>
+        <p id="menu-item-1" class="lead menu-list">
+          List
+        </p>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="d-flex top-nav-bar bg-light justify-content-end">
+  <div class="text-light p-3">
+    <input class="form-control pesquisa" type="search" placeholder="Search">
+  </div>
+  <div class="p-3">
+    <select class="form-control" placeholder="sort by">
+      <option>Type</option>
+      <option>Gen</option>
+      <option>A to Z</option>
+      <option>Z to A</option>
+    </select>
+  </div>
+</div>

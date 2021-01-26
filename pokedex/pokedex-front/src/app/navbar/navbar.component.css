@@ -1,0 +1,55 @@
+.menu-list {
+    display: none;
+}
+.top-nav-bar{
+    position: relative;
+    top: 0;
+}
+.side-nav-bar {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5%;
+    border-radius: 0 5px 5px 0;
+    transition: 0.3s;
+    z-index: +1;
+}
+.side-nav-bar:hover {
+    width: 10%;
+}
+.logo-front {
+    display: none;
+}
+.pokeball-icon {
+    transition: 0.5s;
+}
+.pokeball-icon:hover .logo-back {
+    display: none;
+}
+.pokeball-icon:hover .logo-front {
+    display: inline;
+    transform: rotate(180deg);
+}
+@media only screen and (max-width: 800px) {
+    .top-nav-bar {
+        position: relative;
+    }
+    .side-nav-bar{
+        position: relative;
+        top: 0;
+        height: 10%;
+        width: 100%;
+        border-radius: 0 0 5px 5px;
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        
+    }
+    .side-nav-bar:hover {
+        width: 100%;
+    }
+    .botao {
+        
+    }
+}
